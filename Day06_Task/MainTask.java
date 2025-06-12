@@ -21,7 +21,7 @@ public class MainTask {
             System.out.print("Choose an option: ");
 
             int choice = scanner.nextInt();
-            scanner.nextLine();  // consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1 -> addStudent();
@@ -51,17 +51,17 @@ public class MainTask {
     static void addCourse() {
         System.out.print("Enter Course ID: ");
         int id = scanner.nextInt();
-        scanner.nextLine(); // consume newline
+        scanner.nextLine();
 
         if (!studentCourses.containsKey(id)) {
             System.out.println("Student ID not found.");
             return;
         }
 
-//        System.out.print("Enter course name: ");
-//        String course = scanner.nextLine();
-//        studentCourses.get(id).add(course);
-//        System.out.println("Course added to student.");
+        System.out.print("Enter course name: ");
+        String course = scanner.nextLine();
+       studentCourses.get(id).add(course);
+        System.out.println("Course added to student.");
     }
 
     static void searchStudent() {
@@ -72,7 +72,7 @@ public class MainTask {
         for (int i = 0; i < studentNames.size(); i++) {
             if (studentNames.get(i).equalsIgnoreCase(name)) {
                 System.out.println("Student ID: " + i);
-                //System.out.println("Courses: " + studentCourses.get(i));
+                System.out.println("Courses: " + studentCourses.get(i));
                 found = true;
             }
         }
